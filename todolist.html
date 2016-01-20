@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> To-Do List </title>
+<link rel="stylesheet" href="todo.css">
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="todo.css">
+
+  <style>
+.tasksyet {
+    float: left;
+    margin: 45px;
+    padding: 15px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    background-color: #00FFFF
+} 
+
+.taskspro {
+    float: left;
+    margin: 45px;
+    padding: 15px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    background-color: 	#FF1493	
+} 
+
+.taskscomp {
+    float: left;
+    margin: 45px;
+    padding: 15px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    background-color: #BDB76B	
+} 
+
+.pict-img-tasks{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+</style>
+</head>
+
+<body>
+
+	<h1 style="text-align: center;"><b>NANA's TO-DO LIST<b></h1>
+	<img id="pict-img" class="pict-img-tasks" src="pict.jpg" alt="Chic" style="width:304px;height:428px;>
+
+<div class="container">
+  <div class="row">
+
+		<table>
+			<tr>
+				<td><input id='title' type="text" placeholder="Any Plan(s) for the day?" size="30" font-size="300"></td>
+				<td><input id='start' type="text" placeholder="Start" size ="30" class="datepicker"></td>
+				<td><input id='end' type="text" placeholder="End" size="30" class="datepicker"></td>
+				<td><input id='newtask' type="submit" value="CREATE NEW TASK"></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="tasksyet">
+  		<h2><b>YET TO DO</b></h2>
+  		<p>Call my Mum.</p>
+ 		 <p>Pray.</p>
+	</div>
+
+	<div class="taskspro">
+ 		<h2><b>IN PROGRESS</b></h2>
+  		<p>Do Assignment.</p> 
+  		<p>Push to Github.</p>
+	</div>
+
+	<div class="taskscomp">
+  		<h2><b>COMPLETED</b></h2>
+  		<p>Write A Post.</p>
+  		<p>Go to School.</p>
+	</div>
+</div><!-- /card-container -->
+
+
+</body>
+
+<script>
+  $( document ).ready(function() {
+    $( ".datepicker" ).datepicker();
+  });
+
+  function getEpoch(e){
+  	var aDate = e.split('/');
+  	var epoch = new Date(aDate[2], aDate[1] - 1, aDate[0]).getTime() / 1000;
+  	return epoch;
+  }
+
+  $('#newtask').on('click', function(){
+	  var title = $('#title').val();
+	  var start = getEpoch($('#start').val());
+	  var end = getEpoch($('#end').val());
+  	$('.tasksyet').append('title: '+title+' | start: '+start+' | end: '+end+' now: '+$.now());
+  });
+
+
+
+</script>
+
+
+
+
+
+
+
+</html>
