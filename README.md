@@ -1,0 +1,2 @@
+# A-To-Do-List-Using-jQuery
+An HTML/CSS To-Do list using jQuery. EXPLANATION 1: If a user schedules a task with date say January 23 2016 - January 30 2016, the task will be seen in the "Yet To D0" Bar. EXPLANATION 2: If a user schedules a task with date say January 19 2016 - January 21 2016, the task will be seen in the "In Progress" Bar. EXPLANATION 3: If a user schedules a task with date say January 19 2016 - January 20 2016 which is Today, the task will be seen in the "Completed" Bar. 
